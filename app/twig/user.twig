@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    {% include 'layouts/scripts.twig' %}
+
+    <style>
+        input {
+            margin: 5px 0;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<div class="submitted-data">
+    <h2>Персональная информация</h2>
+    <strong>Имя</strong>
+    <div data-content="name">###</div>
+    <strong>Отчество</strong>
+    <div data-content="secondname">###</div>
+    <strong>Фамилия</strong>
+    <div data-content="lastname">###</div>
+    <strong>Возраст</strong>
+    <div data-content="age">###</div>
+</div>
+
+<h3>Balance: <span class="balance-area"></span></h3>
+
+<h6 class="error-message"></h6>
+</body>
+</html>

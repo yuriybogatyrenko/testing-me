@@ -8,6 +8,8 @@ const TESTING = ((() => {
 
             submitData() {
                 const _self = this;
+                if (!document.querySelector('form'))
+                    return;
                 document.querySelector('form').onsubmit = function (e) {
                     e.preventDefault();
 
@@ -102,11 +104,14 @@ const TESTING = ((() => {
             }
 
             getBalance() {
+
+                if(!document.querySelector('.balance-area'))
+                    return;
+
                 let $timeout,
                     $time = 2000;
-                $timeout = setTimeout(function () {
-                    balance();
-                }, $time);
+
+                balance();
 
                 function balance() {
                     clearTimeout($timeout);
@@ -119,12 +124,12 @@ const TESTING = ((() => {
                         if (xhr.status === 200) {
                             const $response = JSON.parse(xhr.responseText);
 
-                            if($response.success === true) {
+                            if ($response.success === true) {
                                 document.querySelector('.balance-area').innerHTML = $response.balance;
                                 document.querySelector('.error-message').innerHTML = '';
                             } else {
                                 document.querySelector('.balance-area').innerHTML = '####';
-                                document.querySelector('.error-message').innerHTML = 'произошла ошибка: '+$response.message;
+                                document.querySelector('.error-message').innerHTML = 'произошла ошибка: ' + $response.message;
                             }
 
                             console.log('balance updated');
@@ -150,9 +155,13 @@ const TESTING = ((() => {
 document.addEventListener("DOMContentLoaded", function (event) {
     const app = new TESTING();
 
-    document.querySelector('.parse-user').addEventListener('click', function () {
-        app.parseUser();
-    });
+    if (document.querySelector('.parse-user')) {
+        document.querySelector('.parse-user').addEventListener('click', function () {
+            app.parseUser();
+        });
+    }
+
+    app.parseUser();
 
     app.submitData();
     app.getBalance();

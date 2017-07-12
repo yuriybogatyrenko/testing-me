@@ -18,6 +18,7 @@ var TESTING = function () {
             key: 'submitData',
             value: function submitData() {
                 var _self = this;
+                if (!document.querySelector('form')) return;
                 document.querySelector('form').onsubmit = function (e) {
                     e.preventDefault();
 
@@ -112,11 +113,13 @@ var TESTING = function () {
         }, {
             key: 'getBalance',
             value: function getBalance() {
+
+                if (!document.querySelector('.balance-area')) return;
+
                 var $timeout = void 0,
                     $time = 2000;
-                $timeout = setTimeout(function () {
-                    balance();
-                }, $time);
+
+                balance();
 
                 function balance() {
                     clearTimeout($timeout);
@@ -160,9 +163,13 @@ var TESTING = function () {
 document.addEventListener("DOMContentLoaded", function (event) {
     var app = new TESTING();
 
-    document.querySelector('.parse-user').addEventListener('click', function () {
-        app.parseUser();
-    });
+    if (document.querySelector('.parse-user')) {
+        document.querySelector('.parse-user').addEventListener('click', function () {
+            app.parseUser();
+        });
+    }
+
+    app.parseUser();
 
     app.submitData();
     app.getBalance();
