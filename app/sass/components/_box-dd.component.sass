@@ -1,0 +1,45 @@
+.box-dd
+  height: 173px
+  border-radius: 2px
+  background-color: #fafaff
+  border: dashed 0.8px #443a91
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-direction: column
+  text-align: center
+
+  &.box-dd--auto
+    height: 100%
+    width: 100%
+
+
+  &.box-dd--active
+    border-style: solid
+
+  .box-dd__title
+    font-size: 14px
+    font-weight: 600
+    font-family: 'open-sans', sans-serif
+    letter-spacing: 0.2px
+    color: #443a91
+
+    > i
+      margin-right: 10px
+
+  .box-dd__text
+    font-size: 13px
+    line-height: 1.38
+    color: #262626
+    max-width: 250px
+    margin-top: 10px
+
+  .box-dd__label
+    color: #443a91
+    cursor: pointer
+
+  .box-dd__input
+    visibility: hidden
+    width: 0
+    height: 0
+    pointer-events: none

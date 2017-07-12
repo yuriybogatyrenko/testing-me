@@ -1,0 +1,47 @@
+@import "../mixins/mixins"
+@import "../vars"
+
+.pagination
+  display: flex
+  align-items: center
+  justify-content: center
+  margin-bottom: 30px
+
+  &.pagination--left
+    justify-content: flex-start
+
+  &.pagination--styled
+    .pagination__link,
+    .pagination__link-side
+      font-weight: 600
+      color: #443a91
+
+      &:not(.pagination__placeholder)
+        &:hover
+          background: #f3f3f3
+
+        &.active
+          color: #fff
+          background: #443a91
+
+.pagination__link, .pagination__placeholder
+  margin: 0 5px
+  +transition()
+
+  &:not(.pagination__link-side)
+    display: flex
+    width: 32px
+    padding: 0 2px
+    height: 32px
+    align-items: center
+    justify-content: center
+    color: #443a91
+    border-radius: 100px
+
+    &:not(.pagination__placeholder)
+      &:hover
+        background: #f3f3f3
+
+      &.active
+        color: #fff
+        background: #443a91

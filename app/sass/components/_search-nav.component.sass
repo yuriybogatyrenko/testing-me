@@ -1,0 +1,295 @@
+@import "../mixins/mixins"
+@import "../vars"
+
+.search-nav-container
+  background: #f3f3f3
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.3)
+  margin-bottom: 20px
+  color: $blackThree
+
+.search-nav
+  display: none
+
+  &.in
+    display: block
+
+  + .search-nav
+    border-top: 1px solid #c1c1c1
+
+.search-nav__inner
+
+  &.search-nav__inner--fixed
+    height: 60px
+
+  &.grid-search-nav
+    display: flex
+    justify-content: space-between
+
+    .grid-search-nav__item
+      display: flex
+      align-items: center
+      box-sizing: border-box
+      padding: 0 12px
+      border-right: 1px solid #e1e1e1
+      transition: padding .3s ease-in-out
+
+      @media screen and (max-width: 1144px)
+        padding: 0 8px
+
+      &:last-child,
+      &:nth-last-child(2)
+        border-right: none
+
+      &:first-child
+        padding: 0 12px 0 0
+
+        @media screen and (max-width: 1144px)
+          padding: 0 8px 0 0
+
+      &:last-child
+        padding: 0 0 0 12px
+
+        @media screen and (max-width: 1144px)
+          padding: 0 0 0 8px
+
+      [data-select-box]
+        width: 100%
+
+      .select-box
+        padding: 0
+        border: none
+        box-shadow: none
+        background: transparent
+
+      .select-box__list
+        top: 20px
+        left: -12px
+        width: calc(100% + 24px)
+
+        @media screen and (max-width: 1144px)
+          left: -8px
+          width: calc(100% + 16px)
+
+.search-nav__text
+  font-family: 'open-sans', sans-serif
+  font-size: 14px
+  font-weight: 600
+  font-style: normal
+  color: #1a1a1a
+
+  + .icon-full-search
+    margin-left: 6px
+
+.search-nav__range_slider
+  .irs
+    height: 13px
+
+  .irs-from,
+  .irs-to,
+  .irs-max,
+  .irs-min,
+  .irs-single
+    display: none
+
+  .irs-bar
+    background: #9b9b9b
+
+  .irs-bar,
+  .irs-line
+    background: #bd0fe1
+    height: 2px
+    top: 6px
+
+  .irs-slider
+    width: 13px
+    height: 13px
+    background: linear-gradient(to top, #a149a9, #c732d4)
+    box-shadow: 0 1px 3px 0 rgba(165, 85, 172, 0.6), inset 0 0 1px 0 rgba(0, 0, 0, 0.07)
+    border: none
+    border-radius: 50%
+    top: 0
+
+.search-nav__dropdown
+  width: 100%
+
+  &.dropdown
+    position: relative
+
+    .dropdown__content
+      width: calc(100% + 24px)
+      border-radius: 3px
+      background-color: #ffffff
+      box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.15)
+      box-sizing: border-box
+      padding: 14px 12px 10px 12px
+      position: absolute
+      left: -12px
+      z-index: 99
+      visibility: hidden
+      opacity: 0
+      top: 60px
+      +transition()
+
+
+      @media screen and (max-width: 1144px)
+        width: calc(100% + 16px)
+        left: -8px
+
+      &.dropdown__content--center
+        width: 190px
+        left: 50%
+        margin-left: -95px
+        //display: none
+
+.choose-age__wrapper
+  white-space: nowrap
+  &.active
+    .dropdown__content
+      top: 45px
+      opacity: 1
+      visibility: visible
+      display: block
+
+    .choose_age__number
+      background-color: rgba(#d2d1dd, .67)
+
+.search-nav__choose_age
+  &.choose_age
+    &.visible
+      .choose_age__number
+        background-color: rgba(#d2d1dd, .67)
+
+      & + .dropdown__content
+        top: 45px
+        opacity: 1
+        visibility: visible
+        display: block
+
+    .choose_age__number
+      font-size: 14px
+      +transition()
+      font-family: 'open-sans', sans-serif
+      font-weight: 600
+      color: #b7b6be
+      box-sizing: border-box
+      padding: 2px 2px 4px 2px
+
+    .choose_age__text
+      font-size: 14px
+      font-family: 'open-sans', sans-serif
+      font-weight: 600
+      color: #808080
+      margin: 0 2px
+
+.search-nav__submit
+  width: 143px
+  height: 40px
+  //line-height: 40px
+  text-align: center
+  display: inline-flex
+  align-items: center
+  justify-content: space-between
+  border-radius: 3px
+  box-sizing: border-box
+  padding: 0 14px
+  background-image: linear-gradient(to top, #a149a9, #c732d4)
+  box-shadow: 0 1px 3px 0 rgba(165, 85, 172, 0.6), inset 0 0 1px 0 rgba(0, 0, 0, 0.07)
+  color: #ffffff
+  font-size: 14px
+  font-weight: 600
+
+  &.search-nav__submit--large
+    width: 100%
+    text-align: center
+    justify-content: center
+    display: block
+    align-items: center
+
+.search-nav__link
+  font-size: 14px
+  font-weight: 600
+  line-height: 1.14
+  color: #000000
+  display: block
+  width: 100%
+
+  &.search-nav__link--right
+    text-align: right
+
+.search-nav__params
+  padding: 20px 0 20px 0
+
+  &.not_registered
+    &.params
+      .params-cover
+        display: flex
+
+  &.params
+    position: relative
+
+    .params-cover
+      display: none
+      background-color: rgba(#f3f3f3, .8)
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      align-items: center
+      justify-content: center
+      text-align: center
+      z-index: 2
+      flex-direction: column
+
+      .params-cover__text
+        font-family: 'open-sans', sans-serif
+        font-size: 15px
+        font-weight: 600
+        text-align: center
+        color: #1a1a1a
+        margin-bottom: 30px
+
+      .params-cover__btn
+        border-radius: 3px
+        background-image: linear-gradient(to top, #a149a9, #c732d4)
+        box-shadow: 0 1px 3px 0 #a555ac, inset 0 0 1px 0 rgba(0, 0, 0, 0.07)
+        font-family: 'open-sans', sans-serif
+        font-size: 15px
+        font-weight: 600
+        text-align: center
+        color: #ffffff
+        min-width: 180px
+        height: 40px
+        padding: 2px 15px
+        display: inline-flex
+        align-items: center
+        justify-content: center
+
+    .params-grid
+      display: flex
+      justify-content: space-between
+      flex-wrap: wrap
+      margin-left: -30px
+      margin-bottom: -15px
+
+      .params-grid__item
+        //flex-grow: 1
+        flex-basis: 25%
+        padding-left: 30px
+        flex-shrink: 0
+        margin-bottom: 15px
+
+        &.item
+          .item__grid
+            height: 100%
+            display: flex
+            justify-content: space-between
+
+            > div
+              width: calc(50% - 7.5px)
+              display: flex
+              align-items: center
+              flex-shrink: 0
+
+        @media screen and (max-width: 1144px)
+          flex-basis: 33.3333%

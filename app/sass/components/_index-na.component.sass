@@ -1,0 +1,128 @@
+.main-na__new
+  display: flex
+  overflow: hidden
+  border-radius: 10px
+
+  .thumbnail-box
+    position: absolute
+
+.main-na__new-title
+  background: #443a91
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  justify-content: flex-end
+  font-size: 26px
+  font-weight: 600
+  padding: 15px
+  color: #fff
+  line-height: 1.2
+
+.main-na__video
+  align-items: flex-end
+  display: flex
+  background: url(../images/pages/index-na/video.jpg) no-repeat center center
+  background-size: cover
+  color: #fff
+  padding: 20px
+  border-radius: 5px
+  position: relative
+
+  &:after
+    display: block
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: linear-gradient(179deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3))
+    //opacity: 0
+    +transition()
+
+  &:hover
+    .icon-main-na__video-play
+      transform: scale(1.2)
+
+    &:after
+      opacity: 1
+
+  .icon-main-na__video-play
+    position: absolute
+    top: 50%
+    left: 50%
+    margin-left: -32px
+    margin-top: -32px
+    +transition()
+    z-index: 2
+
+.main-na__video-title
+  font-size: 26px
+  font-weight: 600
+
+.main-na__video-time
+  font-size: 14px
+  color: #fff
+
+.main-na__video-info
+  align-items: flex-end
+  position: relative
+  z-index: 2
+
+.main-na__application
+  background-image: linear-gradient(to bottom, rgba(231, 247, 255, 0.3), #e7f7ff)
+
+  .container
+    max-width: 1100px
+
+.main-na__application-image
+  max-width: 468px
+
+.main-na__app-icons
+  margin-left: -10px
+
+.main-na__slider
+  padding: 50px 0
+  .container
+    max-width: 1000px
+
+.main-na__carousel
+  .owl-nav
+    text-align: center
+
+  .owl-next, .owl-prev
+    display: inline-block
+    font-size: 0
+    width: 40px
+    height: 40px
+    background: #bd0fe1
+    border-radius: 100%
+    margin: 0 8px
+    position: relative
+    +transition()
+
+    &:after
+      width: 35%
+      height: 35%
+      border-top: 2px solid #fff
+      border-right: 2px solid #fff
+      position: absolute
+      content: ''
+      top: 32.5%
+      left: 32.5%
+      display: block
+      transform: rotate(45deg)
+      margin-left: -8%
+      
+    &:hover
+      background: #bd0fe1*0.8
+
+  .owl-prev
+    &:after
+      transform: rotate(-135deg)
+      margin-left: 8%
+
+
+.main-na__carousel-content
+  p:not(:last-child)
+    margin-bottom: 20px

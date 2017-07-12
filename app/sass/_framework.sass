@@ -1,0 +1,446 @@
+@import "mixins/mixins"
+@import "vars"
+
+// framework
+
+button
+  overflow: visible
+  background: none
+
+.fw-link
+  color: #5e5d91
+
+  &.fw-link--italic
+    font-style: italic
+
+  &.fw-link-purple
+    color: #bd0fe1
+
+  &.fw-link--blue
+    color: #443a91
+
+.fw-relative
+  position: relative
+  
+.fw-radius-3
+  border-radius: 3px
+  
+.fw-radius-100
+  border-radius: 100%
+
+.fw-grid
+  display: flex
+  flex-wrap: wrap
+
+  &.fw-grid-50
+    margin-left: -50px
+    margin-bottom: -50px
+    & > *
+      padding-left: 50px
+      margin-bottom: 50px
+
+  &.fw-grid-30
+    margin-left: -30px
+    margin-bottom: -30px
+    & > *
+      padding-left: 30px
+      margin-bottom: 30px
+
+  &.fw-grid-12
+    margin-left: -12px
+    margin-bottom: -12px
+    & > *
+      padding-left: 12px
+      margin-bottom: 12px
+
+  &.fw-grid-15
+    margin-left: -15px
+    margin-bottom: -15px
+    & > *
+      padding-left: 15px
+      margin-bottom: 15px
+
+  &.fw-grid-8
+    margin-left: -8px
+    & > *
+      padding-left: 8px
+
+.fw-width-1-1
+  width: 100%
+
+.fw-width-1-2
+  width: 50%
+
+.fw-width-2-3
+  width: 66.66666%
+
+.fw-width-1-3
+  width: 33.333%
+
+.fw-width-1-4
+  width: 25%
+
+.fw-width-3-4
+  width: 75%
+
+.fw-width-1-5
+  width: 20%
+
+.fw-width-1-6
+  width: 16.666666%
+
+.fw-hp-50
+  position: relative
+  &::after
+    margin-bottom: 50%
+    content: ''
+    display: block
+
+.fw-hp-100
+  position: relative
+  &::after
+    margin-bottom: 100%
+    content: ''
+    display: block
+
+.fw-hp-200
+  position: relative
+  &::after
+    margin-bottom: 200%
+    content: ''
+    display: block
+
+.fw-text-center
+  text-align: center
+
+.fw-text-right
+  text-align: right
+
+.fw-text-left
+  text-align: left
+  
+.fw-text-warmgrey
+  color: $warmGrey
+  
+.fw-text-blacktree
+  color: $blackThree
+
+.fw-text-ellipsis
+  overflow: hidden
+  white-space: nowrap
+  text-overflow: ellipsis
+
+.fw-text-white
+  color: #fff
+
+.fw-text-justify
+  text-align: justify
+
+.fw-fw-300
+  font-weight: 300
+
+.fw-fw-600
+  font-weight: 600
+
+.fw-w-100
+  width: 100%
+
+.fw-w-22
+  width: 22%
+
+@each $width in 70, 160, 194, 250, 260, 290, 327, 340, 350, 380, 450, 523, 610, 900
+  .fw-wp-#{$width}
+    width: #{$width}px
+
+.fw-green-color
+  color: #6ec100
+
+@each $font-size in 12, 13, 14, 15, 16, 18, 20, 24, 30
+  .fw-fz-#{$font-size}
+    font-size: #{$font-size}px
+
+@each $padding-top in 20, 30
+  .fw-pt-#{$padding-top}
+    padding-top: #{$padding-top}px
+
+@each $margin-top in 5, 10, 15, 20, 25, 30, 35, 40, 50, 65, 73, 74
+  .fw-mt-#{$margin-top}
+    margin-top: #{$margin-top}px
+
+@each $margin-top-inverse in 20
+  .fw-mt-#{$margin-top-inverse}-inverse
+    margin-top: -#{$margin-top-inverse}px
+
+.fw-mt-auto
+  margin-top: auto
+
+@each $margin-right in 3, 5, 10, 15, 20, 25, 30, 40
+  .fw-mr-#{$margin-right}
+    margin-right: #{$margin-right}px
+
+@each $margin-left in 5, 8, 15, 20, 30, 40
+  .fw-ml-#{$margin-left}
+    margin-left: #{$margin-left}px
+
+@each $margin-bottom in 5, 10, 15, 20, 25, 30, 40, 50, 120
+  .fw-mb-#{$margin-bottom}
+    margin-bottom: #{$margin-bottom}px
+
+@each $padding-bottom in 20
+  .fw-pb-#{$padding-bottom}
+    padding-bottom: #{$padding-bottom}px
+
+.fw-inline-block
+  display: inline-block
+  vertical-align: middle
+
+.fw-hidden
+  display: none
+
+.fw-img-responsive
+  max-width: 100%
+  width: 100%
+
+.fw-mw-80
+  max-width: 80%
+
+.fw-mw-87
+  max-width: 87%
+
+.fw-mw-160
+  max-width: 160px
+
+.fw-mw-250
+  max-width: 250px
+
+.fw-mw-275
+  max-width: 275px
+
+.fw-mw-300
+  max-width: 300px
+
+.fw-mw-335
+  max-width: 335px
+
+.fw-mw-400
+  max-width: 400px
+
+.fw-mw-487
+  max-width: 487px
+
+.fw-mw-510
+  max-width: 510px
+
+.fw-mw-728
+  max-width: 728px
+
+.fw-mh-500
+  min-height: 500px
+
+.fw-height-378
+  height: 378px
+
+.fw-height-200
+  height: 200px
+
+.fw-dark-grey-color
+  color: #333
+
+.trans
+  +transition()
+
+.fw-flex
+  display: flex
+
+  &.fw-flex-column
+    flex-direction: column
+  
+.fw-flex-wrap
+  flex-wrap: wrap
+
+.fw-flex-between
+  justify-content: space-between
+
+.fw-flex-shrink
+  flex-shrink: 1
+
+.fw-flex-shrink-0
+  flex-shrink: 0
+
+.fw-flex-basis-0
+  flex-basis: 0
+
+.fw-flex-middle
+  align-items: center
+
+.fw-flex-center
+  justify-content: center
+
+.fw-flex-start
+  align-items: start
+
+.fw-flex-grow
+  flex-grow: 1
+
+.fw-flex-shrink-no
+  flex-shrink: 0
+
+.fw-visible-large,
+.fw-hidden-medium
+  display: initial
+
+  @media screen and (max-width: 1144px)
+    display: none
+
+.fw-hidden-large,
+.fw-visible-medium
+  display: none
+
+  @media screen and (max-width: 1144px)
+    display: initial
+
+@each $border-radius in 5
+  .fw-border-radius-#{$border-radius}
+    border-radius: #{$border-radius}px
+
+.fw-bg-purple
+  background-image: linear-gradient(to bottom, #bc16e1, #7f00ff)
+
+@each $square-width in 27, 30, 34, 50, 80, 100
+  .fw-img-square-#{$square-width}
+    width: #{$square-width}px
+    height: #{$square-width}px
+
+    &.rounded
+      border-radius: 50%
+      overflow: hidden
+
+    > img
+      width: 100%
+      height: 100%
+      object-fit: cover
+
+.fw-img-rounded
+  border-radius: 50%
+
+.fw-hus
+  font-family: 'open-sans', sans-serif
+  font-size: 14px
+  font-weight: 600
+  text-align: left
+  color: #000000
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap
+  position: relative
+  box-sizing: border-box
+  padding-right: 12px
+
+  &.fw-hus--style-2
+    color: #999999
+    font-weight: normal
+    font-size: 13px
+
+  &.fw-hus-reverse
+    padding-right: 0
+    padding-left: 12px
+
+    &::after
+      right: initial
+      left: 0
+
+  &::after
+    position: absolute
+    right: 0
+    top: 50%
+    transform: translateY(-50%)
+    display: block
+    content: ''
+    width: 7px
+    height: 7px
+    border-radius: 50%
+    background-color: #6ec100
+
+  &.fw-hus--offline::after
+    background-color: #999999
+
+.fw-overflow
+  overflow: hidden
+
+.fw-overflow-no
+  overflow: visible
+
+.fw-tooltip
+  position: relative
+
+  &:hover
+    &::after,
+    &::before
+      display: block
+      z-index: 1
+
+  &.fw-tooltip--left
+    &::after
+      transform: none
+      left: 0
+      text-align: left
+
+  &.fw-tooltip--300
+    &::after
+      width: 300px
+
+  &::before
+    display: none
+    content: ''
+    width: 0
+    height: 0
+    border-style: solid
+    border-width: 0 10px 10px 10px
+    border-color: transparent transparent rgba(#000, .8) transparent
+    position: absolute
+    top: calc(100% + 5px)
+    left: 50%
+    transform: translateX(-50%)
+
+  &::after
+    display: none
+    box-sizing: border-box
+    padding: 7px 10px
+    position: absolute
+    top: calc(100% + 15px)
+    background-color: rgba(#000, .8)
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5)
+    color: #ffffff
+    text-align: center
+    font-size: 13px
+    content: attr(data-title)
+    min-width: 110px
+    left: 50%
+    transform: translateX(-50%)
+    border-radius: 5px
+
+.fw-color-purple
+  color: #bd0fe1
+
+.fw-devider
+  width: 100%
+  height: 1px
+  display: block
+
+  &.fw-devider--horizontal
+    display: inline-block
+    width: 1px
+    height: inherit
+
+.fw-dot-connected
+  position: relative
+
+  &::after
+    position: absolute
+    content: ''
+    top: 24px
+    bottom: 0
+    left: 12px
+    border-left: solid 1px #3fd0a5
+
+

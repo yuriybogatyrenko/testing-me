@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    {% include 'layouts/scripts.twig' %}
+
+    <style>
+        input {
+            margin: 5px 0;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<form action="#">
+    <h2>Форма</h2>
+    <p>
+        <span>Имя</span>
+        <input type="text" name="name" placeholder="Имя">
+        <span class="error-text" style="color: red;"></span>
+    </p>
+    <p>
+        <span>Отчество</span>
+        <input type="text" name="secondname" placeholder="Отчество">
+        <span class="error-text" style="color: red;"></span>
+    </p>
+    <p>
+        <span>Фамилия</span>
+        <input type="text" name="lastname" placeholder="Фамилия">
+        <span class="error-text" style="color: red;"></span>
+    </p>
+    <p>
+        <span>Возраст</span>
+        <input type="text" name="age" placeholder="Возраст">
+        <span class="error-text" style="color: red;"></span>
+    </p>
+    <p>
+        <button type="submit">save</button>
+    </p>
+</form>
+
+<button class="parse-user">Обновить данные пользователя</button>
+
+<div class="submitted-data">
+    <h2>Персональная информация</h2>
+    <div>Имя</div>
+    <div data-content="name">###</div>
+    <div>Отчество</div>
+    <div data-content="secondname">###</div>
+    <div>Фамилия</div>
+    <div data-content="lastname">###</div>
+    <div>Возраст</div>
+    <div data-content="age">###</div>
+</div>
+
+<h3>Balance: <span class="balance-area"></span></h3>
+
+<h6 class="error-message"></h6>
+</body>
+</html>

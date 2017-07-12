@@ -1,0 +1,156 @@
+.navigation-sidebar
+  box-sizing: border-box
+  padding: 20px
+  border-radius: 5px
+  background-color: #ffffff
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.15)
+
+  .navigation-sidebar__header
+    margin-bottom: 20px
+
+    &.header
+      display: flex
+      margin-left: -20px
+      align-items: center
+
+      .header__text
+        font-family: 'open-sans', sans-serif
+        font-size: 16px
+        font-weight: 600
+        line-height: 1.13
+        color: #191919
+
+        > span
+          display: block
+          font-family: 'open-sans', sans-serif
+          font-size: 14px
+          line-height: 1.5
+          color: #262626
+
+      .header__item
+        box-sizing: border-box
+        padding-left: 20px
+        flex-grow: 1
+        display: flex
+        align-items: center
+
+      .header__icon
+        margin-right: 10px
+        
+      .header__button
+        display: inline-flex
+        align-items: center
+        border-radius: 5px
+        background-color: #00cc8f
+        box-shadow: 0 1px 4px 0 rgba(0, 204, 143, 0.2)
+        font-size: 14px
+        font-weight: 600
+        text-align: center
+        color: #ffffff
+        font-family: 'open-sans', sans-serif
+        justify-content: center
+        padding: 6px
+        box-sizing: border-box
+        overflow: hidden
+        text-overflow: ellipsis
+        white-space: nowrap
+        width: 100%
+
+  .navigation-sidebar__link
+    font-size: 14px
+    letter-spacing: 0.2px
+    color: rgba(#262626, .3)
+    display: block
+    margin-top: 20px
+
+  .navigation-sidebar__list
+    list-style: none
+    box-sizing: border-box
+
+    &.list
+      .list__item
+        display: flex
+        flex-direction: column
+        justify-content: center
+        box-sizing: border-box
+        padding-right: 30px
+        position: relative
+        padding-bottom: 14px
+        border-bottom: 2px solid #e3e3e6
+        overflow: hidden
+        text-overflow: ellipsis
+        white-space: nowrap
+
+        + .list__item
+          margin-top: 14px
+
+        &.list__item--active
+          .list__link
+            color: #bd0fe1
+            padding-left: 18px
+
+            &::before
+              left: 0
+
+      .list__link
+        font-family: 'open-sans', sans-serif
+        font-size: 14px
+        letter-spacing: 0.2px
+        color: #262626
+        display: flex
+        align-items: center
+        transition: all .3s ease-in-out
+        position: relative
+
+        &::before
+          transition: all .3s ease-in-out
+          position: absolute
+          left: -15px
+          display: block
+          content: ''
+          width: 8px
+          height: 8px
+          border-bottom: 2px solid #bd0fe1
+          border-right: 2px solid #bd0fe1
+          transform: rotate(-45deg)
+
+        &:hover
+          color: #bd0fe1
+          padding-left: 18px
+
+          &::before
+            left: 0
+
+      .list__info
+        font-family: 'open-sans', sans-serif
+        font-size: 13px
+        line-height: 1.23
+        color: #999999
+        margin-top: 2px
+        overflow: hidden
+        text-overflow: ellipsis
+        white-space: nowrap
+
+      .list__badge
+        top: 50%
+        right: 0
+        position: absolute
+        border-radius: 100px
+        width: 16px
+        height: 16px
+        overflow: hidden
+        text-overflow: ellipsis
+        white-space: nowrap
+        display: flex
+        align-items: center
+        justify-content: center
+        padding: 3px
+        background-color: #f2535c
+        transform: translateY(-50%)
+        font-family: 'open-sans', sans-serif
+        font-size: 12px
+        font-weight: 600
+        line-height: 0.83
+        text-align: center
+        color: #ffffff
+        margin-top: -7px

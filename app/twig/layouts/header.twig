@@ -1,0 +1,128 @@
+<div class="header-component">
+    <header class="header">
+        <div class="container">
+            <div class="header__grid">
+                <div class="header__left">
+                    <a [routerLink]="['/']" class="header__logo">
+                        <img src="images/header-logo-logged.svg" class="header__logo-image" alt="">
+                    </a>
+                    <div class="header__apps">
+                        <div class="header__apps-text">Установить <br>приложение</div>
+                        <a href="#" class="header__apps-link fw-mr-10">
+                            <i class="icon-app-apple"></i>
+                        </a>
+                        <a href="#" class="header__apps-link">
+                            <i class="icon-app-google"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="header__right">
+                    <ul class="header__logged-list">
+                        <li class="header__logged-item">
+                            <span class="header__logged-key fw-inline-block">Осталось минут</span>
+                            <span class="header__logged-value">20</span>
+                        </li>
+                        <li class="header__logged-item">
+                            <span class="header__logged-key fw-inline-block">Осталось контактов</span>
+                            <span class="header__logged-value">30</span>
+                        </li>
+                        <li class="header__logged-item">
+                            <span class="header__logged-key fw-inline-block">Место в поиске</span>
+                            <span class="header__logged-value">100</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="navigation">
+        <div class="container">
+            <div class="navigation__inner-wrapper">
+                <nav class="navigation__bar">
+                    <ul class="navigation__list">
+                        <li class="navigation__item">
+                            <a class="navigation__link" routerLinkActive="navigation__link_active"
+                               [routerLink]="['/search']">Поиск</a>
+                        </li>
+                        <li class="navigation__item">
+                            <a class="navigation__link" routerLinkActive="navigation__link_active"
+                               [routerLink]="['/who-watched']">
+                                Кто смотрел
+                                <span class="navigation__counter"
+                                      *ngIf="Profile.watches > 0">{{ Profile.watches }}</span>
+                            </a>
+                        </li>
+                        <li class="navigation__item">
+                            <a class="navigation__link" routerLinkActive="navigation__link_active"
+                               [routerLink]="['/delivery']">
+                                Рассылка
+                                <span class="navigation__counter">59</span>
+                            </a>
+                        </li>
+                        <li class="navigation__item">
+                            <a class="navigation__link js-open-popup" data-popup-target="chat" routerLinkActive="navigation__link_active"
+                               [routerLink]="['/messages']">
+                                Сообщения
+                                <span class="navigation__counter">150</span>
+                            </a>
+                        </li>
+                        <li class="navigation__item navigation__item_submenu">
+                            <a class="navigation__link">Покупки</a>
+                            <div class="navigation__submenu">
+                                подменю
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="navigation__account">
+                    <div class="navigation__wallet fw-mr-10">
+                        <a [routerLink]="['/wallet']" class="navigation__wallet-icon fw-mr-5 fw-inline-block">
+                            <i class="icon-header-wallet"></i>
+                        </a>
+                        <span class="fw-inline-block">20423 Р.</span>
+                    </div>
+                    <div class="navigation__profile fw-mr-10">
+                        <a [routerLink]="['/wallet']" class="navigation__profile-link">
+                            <img src="{{ Profile.userAvatarSrc ? Profile.userAvatarSrc : 'http://placehold.it/34x34' }}"
+                                 class="navigation__profile-image fw-inline-block" alt="">
+                            <span class="navigation__profile-status">
+                            <i class="icon-profile-activated"></i>
+                                <!--<i class="icon-profile-blocked"></i>
+                                <i class="icon-profile-invisible"></i>-->
+                        </span>
+                        </a>
+                    </div>
+                    <div *ngIf="Profile.premiumSuggestion === 'true'" class="navigation__buy-premium fw-mr-10">
+                        <a [routerLink]="['/wallet/buy-premium']" class="button-empty"><span class="button-empty__text">Купить премиум</span></a>
+                    </div>
+                    <div class="js-navigation__settings navigation__settings">
+                        <div class="navigation__settings-icon js-navigation__settings-icon">
+                            <i class="icon-header-cog"></i>
+                        </div>
+                        <div class="js-navigation__settings-dropdown navigation__settings-wrapper">
+                            <ul class="navigation__settings-listing">
+                                <li class="navigation__settings-item">
+                                    <a [routerLink]="['/profile']" class="navigation__settings-link">Профиль</a>
+                                </li>
+                                <li class="navigation__settings-item">
+                                    <a [routerLink]="['/profile']" class="navigation__settings-link">Профиль</a>
+                                </li>
+                                <li class="navigation__settings-item">
+                                    <a [routerLink]="['/wallet']" class="navigation__settings-link">Кошелек</a>
+                                </li>
+                                <li class="navigation__settings-item">
+                                    <a [routerLink]="['/settings']" class="navigation__settings-link">Настройки</a>
+                                </li>
+                                <li class="navigation__settings-item">
+                                    <a [routerLink]="['/logout']"
+                                       class="navigation__settings-link navigation__settings-link_red">Выход</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

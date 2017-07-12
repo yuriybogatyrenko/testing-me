@@ -1,0 +1,85 @@
+@import "../mixins/mixins"
+
+.thumbnail-box
+  position: relative
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  margin: 0
+  padding: 0
+
+  &:hover
+    .thumbnail-box__cover
+      background: rgba(#000,.5)
+
+    .thumbnail-box__text
+      //right: 0
+      //margin-top: 0
+      transform: translateY(-50%)
+      opacity: 1
+
+    .thumbnail-box__info
+      bottom: 20px
+      opacity: 1
+
+  .thumbnail-box__image
+    position: absolute
+    width: 100%
+    height: 100%
+
+  .thumbnail-box__text
+    +transition()
+    text-align: center
+    opacity: 0
+    margin: 0
+    padding: 15px
+    position: absolute
+    top: 50%
+    width: 100%
+    transform: translateY(-100%)
+    z-index: 2
+    font-family: 'open-sans', sans-serif
+    font-size: 14px
+    color: #ffffff
+    //transition: all .3s ease-in-out
+
+  .thumbnail-box__cover
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background-color: transparent
+    z-index: 1
+    transition: all .3s ease-in-out
+    overflow: hidden
+
+  .thumbnail-box__info
+    display: flex
+    justify-content: space-between
+    align-items: center
+    position: absolute
+    bottom: 0
+    opacity: 0
+    width: 100%
+    padding: 0 15px
+    transition: all .3s ease-in-out
+
+    > div
+      display: inline-flex
+      align-items: center
+      flex-wrap: nowrap
+
+  .thumbnail-box__link
+    font-size: 13px
+    color: #ffffff
+    display: inline-flex
+    align-items: center
+
+    + .thumbnail-box__link
+      margin-left: 5px
+
+  .thumbnail-box__photo-count
+    margin-left: 5px
+

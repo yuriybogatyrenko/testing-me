@@ -1,0 +1,46 @@
+.bottom-reg-form
+  padding: 28px 0 150px
+  //background: linear-gradient(to bottom, rgba(231, 247, 255, 0.3), #e7f7ff)
+  background: url(../images/pages/index-na/bottom-reg-form.jpg) no-repeat center top / cover, linear-gradient(to bottom, rgba(231, 247, 255, 0.3), #e7f7ff)
+
+  .select-box, .input-box
+    border-radius: 3px
+
+.bottom-reg-form__wrapper
+  max-width: 410px
+  margin-left: auto
+  margin-right: auto
+
+.bottom-reg-form__gender-switcher
+  border: solid 1px #d0d0d0
+  background: #fff
+  border-radius: 3px
+  overflow: hidden
+
+  &.bottom-reg-form__gender-switcher--purple
+    border-color: #bd0fe1
+
+    input:checked
+      & + .bottom-reg-form__gender-switcher-detector
+        background: #bd0fe1
+        color: #fff
+
+
+  .bottom-reg-form__gender-switcher-detector
+    line-height: 38px
+    width: 45px
+    text-align: center
+    display: inline-flex
+    vertical-align: middle
+    align-items: center
+    justify-content: center
+    color: #b05fbc
+    +transition()
+
+    &.bottom-reg-form__gender-switcher-detector--large
+      width: 100%
+
+input:checked
+  & + .bottom-reg-form__gender-switcher-detector
+    background: #b05fbc
+    color: #fff

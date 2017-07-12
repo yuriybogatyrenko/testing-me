@@ -1,0 +1,172 @@
+.chat-list
+  list-style: none
+  overflow: hidden
+
+  .chat-list__thumbnail
+    width: 50px
+    height: 50px
+    border-radius: 50%
+    overflow: hidden
+
+    > img
+      width: 100%
+      height: 100%
+      object-fit: cover
+
+  .chat-list__item
+    display: flex
+    justify-content: space-between
+    box-sizing: border-box
+    padding: 10px 20px 13px 20px
+
+    > div
+      flex-grow: 1
+      margin-left: 20px
+      display: flex
+      flex-direction: column
+      align-items: flex-start
+      position: relative
+
+      &:first-child
+        margin-left: 0
+        flex-direction: row
+        flex-shrink: 0
+        flex-grow: 0
+        width: 50px
+        align-items: center
+
+    &:hover
+      background-color: #f7f7f7
+
+    &.chat-list__inbox
+      background-color: #f7f7f7
+
+      &.chat-list__inbox--new
+        background-color: rgba(68, 58, 145, 0.15)
+
+    &.chat-list__send
+      background-color: rgba(68, 58, 145, 0.1)
+
+    &:hover
+      .chat-list__button
+        right: 0
+
+  .chat-list__user
+    font-family: 'open-sans', sans-serif
+    font-size: 14px
+    font-weight: 600
+    text-align: left
+    color: #000000
+    overflow: hidden
+    text-overflow: ellipsis
+    white-space: nowrap
+    position: relative
+    box-sizing: border-box
+    padding-right: 12px
+
+    &::after
+      position: absolute
+      right: 0
+      top: 50%
+      transform: translateY(-50%)
+      display: block
+      content: ''
+      width: 7px
+      height: 7px
+      border-radius: 50%
+      background-color: #6ec100
+
+    &.chat-list__user--offline::after
+      background-color: #999999
+
+  .chat-list__message
+    text-overflow: ellipsis
+    white-space: nowrap
+    font-family: 'open-sans', sans-serif
+    font-size: 13px
+    line-height: 1.38
+    text-align: left
+    color: #262626
+    width: 100%
+    margin: 5px 0
+    position: relative
+    box-sizing: border-box
+    padding-left: 20px
+
+    &::before
+      display: block
+      position: absolute
+      margin-top: -2px
+      content: ""
+      top: 50%
+      left: 2px
+      width: 8px
+      height: 4px
+      border-bottom: 2px solid #000000
+      border-left: 2px solid #000000
+      transform: translateY(-50%) rotate(-45deg)
+
+    &.chat-list__message--active
+      &::before
+        border-color: #6ec100
+
+  .chat-list__location,
+  .chat-list__time
+    font-family: 'open-sans', sans-serif
+    font-size: 13px
+    line-height: 1.23
+    text-align: left
+    color: #999999
+    text-overflow: ellipsis
+    white-space: nowrap
+    width: 100%
+    display: flex
+    align-items: center
+
+    > i
+      margin-right: 5px
+
+  .chat-list__location
+    margin: 5px 0
+
+  .chat-list__link
+    color: #bd0fe1
+    position: relative
+    margin: 0 5px
+
+    &:hover
+      &::after
+        min-width: 400px
+        background-color: #f7f8ff
+        box-shadow: 0 3px 10px 0 rgba(218, 218, 240, 0.66)
+        border: solid 1px rgba(226, 226, 252, 0.67)
+        content: attr(data-title)
+        padding: 10px 15px
+        box-sizing: border-box
+        position: absolute
+        left: 0
+        top: 100%
+        margin-top: 5px
+        white-space: normal
+        line-height: 1.5
+
+
+  .chat-list__button
+    font-family: 'open-sans', sans-serif
+    font-size: 14px
+    font-weight: 300
+    text-align: center
+    color: #ffffff
+    background-color: #bd0fe1
+    border-radius: 5px
+    min-height: 30px
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    padding: 5px 10px
+    text-transform: capitalize
+    position: absolute
+    right: -50%
+    top: 50%
+    transform: translateY(-50%)
+    transition: right .3s ease-in-out

@@ -1,0 +1,24 @@
+.alert-box
+  box-sizing: border-box
+  padding: 8px
+  border-width: 1px
+  border-style: solid
+  display: flex
+  justify-content: center
+  min-height: 38px
+  flex-direction: column
+
+  &.alert-box--danger
+    color: #ff0000
+    border-color: #ff0000
+
+  &.alert-box--unstyled
+    padding: 0
+    border: none
+
+  .alert-box__text
+    color: inherit
+    font-family: 'open-sans', sans-serif
+    font-size: 13px
+    line-height: 1.38
+    text-align: left

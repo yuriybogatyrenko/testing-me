@@ -1,0 +1,314 @@
+@import "../mixins/mixins"
+@import "../vars"
+
+.header
+  padding: 15px 0
+  position: relative
+  z-index: 2
+
+.header__grid
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+.header__left
+  display: flex
+  align-items: center
+
+.header__logo
+  margin-right: 35px
+
+.header__logged-item, .header__logged-key, .header__logged-value
+  display: inline-block
+  vertical-align: middle
+
+.header__logged-key
+  margin-right: 5px
+
+.header__logged-value
+  border: 1px solid #a149a9
+  color: #a149a9
+  border-radius: 50px
+  line-height: 22px
+  height: 24px
+  padding: 0 2px
+  font-weight: 600
+  min-width: 24px
+  text-align: center
+  box-sizing: border-box
+
+.header__logged-item
+  &:not(:last-child)
+    margin-right: 15px
+
+.header__logged-list
+  display: flex
+  align-items: center
+
+.header__apps
+  border-radius: 5px
+  border: solid 1px #7f7f7f
+  padding: 6px 12px
+  display: flex
+  align-items: center
+
+  &.white-type
+    border-color: #cbc0cf
+
+    .header__apps-text
+      color: #f2f2f2
+
+.header__apps-text
+  font-weight: 300
+  font-size: 10px
+  text-transform: uppercase
+  margin-right: 15px
+  color: #808080
+
+.header__apps-icon
+  display: inline-block
+  vertical-align: middle
+
+// navigation
+.navigation
+  background: #443A91
+  box-shadow: 0 2px 10px 0 rgba(32,23,107,0.50)
+  color: #fff
+  position: relative
+
+.navigation__profile-image
+  border-radius: 100%
+  max-width: 100%
+  max-height: 100%
+
+.icon-header-wallet
+  +transition()
+
+.navigation__wallet-icon
+  &:hover
+    .icon-header-wallet
+      +transform(rotate(20deg))
+
+.navigation__profile-link
+  display: block
+  position: relative
+  width: 34px
+  height: 34px
+
+.navigation__profile-status
+  position: absolute
+  bottom: -2px
+  left: -2px
+  line-height: 1
+  font-size: 0
+  display: block
+
+.navigation__inner-wrapper
+  display: flex
+  justify-content: space-between
+  align-items: center
+  min-height: 42px
+
+.navigation__list
+  display: flex
+  align-items: center
+
+.navigation__item
+  //position: relative
+  &:not(:last-child)
+    margin-right: 25px
+
+  &_active
+    .navigation__link
+    &:before
+      padding: 0 5px
+      width: 100%
+
+    .navigation__submenu
+      +transform(scale(1))
+      opacity: 1
+      visibility: visible
+
+.navigation__item_submenu
+  &:hover
+    .navigation__link
+      &:before
+        padding: 0 5px
+        width: 100%
+
+    .navigation__submenu
+      +transform(scale(1))
+      opacity: 1
+      visibility: visible
+
+.navigation__link
+  position: relative
+  display: flex
+  align-items: center
+  height: 42px
+
+  &:before
+    position: absolute
+    bottom: 0
+    width: 0
+    left: 50%
+    +transform(translateX(-50%))
+    height: 2px
+    background: rgba(#ff656f, 0.9)
+    content: ''
+    display: block
+    +transition()
+
+  &:hover
+    &:before
+      padding: 0 5px
+      width: 100%
+
+
+.navigation__link_active
+  &:before
+    display: block
+    content: ''
+    position: absolute
+    left: 50%
+    //right: 0
+    +transform(translateX(-50%))
+    background: rgba(#ff656f, 0.9)
+    bottom: 0
+    height: 2px
+    width: 100%
+    padding: 0 5px
+
+.navigation__submenu
+  position: absolute
+  top: 100%
+  left: 0
+  right: 0
+  background: #fff
+  color: $black-three
+  +transition()
+  +transform(scale(0.9))
+  opacity: 0
+  visibility: hidden
+
+.navigation__counter
+  position: absolute
+  left: 100%
+  bottom: 100%
+  margin-bottom: -19px
+  margin-left: -5px
+  background: #f2535c
+  color: #fff
+  border-radius: 100px
+  font-weight: 600
+  line-height: 16px
+  font-size: 12px
+  padding: 0 5px
+
+.navigation__account
+  display: flex
+  align-items: center
+
+.navigation__settings
+  position: relative
+  height: 42px
+  display: flex
+  //align-items: center
+
+  &.active
+    .navigation__settings-wrapper
+      visibility: visible
+      opacity: 1
+      margin-top: 0
+
+.navigation__settings-wrapper
+  position: absolute
+  top: 100%
+  right: -8px
+  min-width: 220px
+  background: #ffffff
+  color: #000
+  border-radius: 0 0 3px 3px
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.15)
+  margin-top: 20px
+  +transition()
+  visibility: hidden
+  opacity: 0
+  z-index: 10
+
+.navigation__settings-listing
+  padding: 5px 20px
+
+.navigation__settings-item
+  position: relative
+  &:not(:last-child)
+    border-bottom: 1px solid #e3e3e6
+
+  &:first-child
+    &:before
+      top: -5px
+
+  &:last-child
+    &:before
+      bottom: -5px
+
+  &:before
+    display: block
+    content: ''
+    position: absolute
+    left: -20px
+    bottom: -1px
+    top: -1px
+    width: 0
+    padding: 0
+    background: rgba(#ccc, 0.2)
+    +transition()
+    box-sizing: content-box
+
+  &:hover
+    &:before
+      padding: 0 20px
+      width: 100%
+
+
+.navigation__settings-link
+  display: block
+  padding: 8px 0
+  color: $black-three
+  position: relative
+  z-index: 2
+
+  &_red
+    color: $red
+
+.icon-header-cog
+  +transition(all 1s ease)
+
+.navigation__settings-icon
+  cursor: pointer
+  display: flex
+  align-items: center
+  position: relative
+
+  &:before
+    position: absolute
+    bottom: 0
+    width: 0
+    left: 50%
+    +transform(translateX(-50%))
+    height: 2px
+    background: rgba(#ff656f, 0.9)
+    content: ''
+    display: block
+    +transition()
+
+  &.active
+    &:before
+      padding: 0 8px
+      width: 100%
+
+
+
+  &:hover
+    .icon-header-cog
+      +transform(rotate(180deg))

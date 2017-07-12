@@ -1,0 +1,99 @@
+.package-box
+  box-sizing: border-box
+  padding: 21px
+  border-radius: 5px
+  background-color: #ffffff
+  border: solid 1px #d6d6d6
+  font-family: 'open-sans', sans-serif
+  display: flex
+  align-items: center
+
+  &.package-box--sale
+    position: relative
+    overflow: hidden
+
+    &::after
+      content: attr(data-sale)
+      position: absolute
+      width: 60px
+      height: 60px
+      top: -30px
+      right: -30px
+      display: flex
+      align-items: flex-end
+      justify-content: center
+      text-align: center
+      background-color: #ff636d
+      font-size: 13px
+      color: #fff
+      box-sizing: border-box
+      transform: rotate(45deg)
+      padding-bottom: 1px
+
+  &.package-box--bordered
+    border-color: #bd0fe1
+
+  + .package-box
+    margin-top: 15px
+
+  .package-box__item
+    &:first-child
+      flex-grow: 1
+
+    &:last-child
+      flex-shrink: 0
+      max-width: 280px
+      min-width: 250px
+      width: 100%
+      margin-left: 15px
+      display: flex
+      justify-content: flex-end
+      align-items: center
+
+
+  .package-box__title
+    font-family: inherit
+    font-size: 16px
+    font-weight: 600
+    color: #191919
+
+    &.package-box__title--green
+      color: #00cc8f
+
+  .package-box__info
+    font-family: inherit
+    font-size: 13px
+    line-height: 1.38
+    color: #262626
+    margin-top: 5px
+
+  .package-box__price
+    font-family: inherit
+    font-size: 18px
+    font-weight: 300
+    line-height: 0.89
+    color: #333333
+
+    &.package-box__price--sale
+      text-align: right
+      > span
+        display: block
+        font-size: 13px
+        line-height: 1.23
+        color: #999999
+        text-decoration: line-through
+        margin-bottom: 5px
+
+  .package-box__remaining
+    margin-top: 5px
+    font-size: 13px
+    line-height: 1.23
+    color: #999999
+
+
+  .package-box__button
+    min-width: 130px
+    margin-left: 20px
+
+
+

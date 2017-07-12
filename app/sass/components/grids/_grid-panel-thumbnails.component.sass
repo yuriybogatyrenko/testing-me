@@ -1,0 +1,45 @@
+.grid-panel-thumbnails
+  display: flex
+  flex-wrap: wrap
+  justify-content: flex-start
+  align-items: flex-start
+
+  .thumbnail-box
+    position: absolute
+
+  .grid-panel-thumbnails__item
+    position: relative
+    flex-basis: 33.333333%
+    flex-shrink: 0
+    &::after
+      margin-bottom: 100%
+      content: ''
+      display: block
+
+    &:nth-child(4n)
+      &::after
+        margin-bottom: 200%
+        content: ''
+        display: block
+
+    &:nth-child(5n)
+      flex-basis: 66.6666666%
+      display: flex
+      flex-wrap: wrap
+
+      &::after
+        content: ''
+        display: none
+
+      .grid-panel-thumbnails__item
+        flex-basis: 50%
+        flex-grow: 1
+        flex-shrink: 0
+
+        &:nth-child(3n)
+          flex-basis: 100%
+
+          &::after
+            margin-bottom: 50%
+            content: ''
+            display: block

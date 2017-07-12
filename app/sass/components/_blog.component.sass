@@ -1,0 +1,98 @@
+@import "../mixins/mixins"
+
+.blog-item
+  border-radius: 5px
+
+.blog-item__header
+  padding: 20px
+
+.blog-item__header-link
+  height: 60px
+  display: block
+  overflow: hidden
+  +transition()
+  
+  &:hover
+    //font-size: 18px
+    color: #a149a9
+
+.blog-item__image
+  border-radius: 100%
+
+.blog-item__content
+  padding: 20px
+  line-height: 1.5
+
+.blog-article__title
+  font-size: 26px
+  font-weight: 600
+
+.blog-article__share
+  border-bottom: 1px solid #dadada
+  padding-bottom: 15px
+
+.read-also
+  margin-bottom: 40px
+
+.read-also__carousel
+  padding-left: 70px
+  padding-right: 70px
+  position: relative
+  
+  .owl-next, .owl-prev
+    position: absolute
+    top: 50%
+    right: 0
+    border-radius: 100%
+    background: #bd0fe1
+    width: 40px
+    height: 40px
+    font-size: 0
+    margin-top: -36px
+
+    &:after
+      display: block
+      content: ''
+      position: absolute
+      top: 50%
+      left: 50%
+      margin-left: -3px
+      +transform(translate3d(-50%,-50%, 0) rotate(45deg))
+      width: 14px
+      height: 14px
+      border-right: 2px solid #fff
+      border-top: 2px solid #fff
+
+  .owl-prev
+    right: auto
+    left: 0
+    +transform(rotate(-180deg))
+
+.latest-articles-list
+  padding: 0 20px
+
+.sidebar-categories__list
+  padding: 0 20px
+  margin-bottom: 10px
+
+.panel-subscribe-form
+  padding: 0 20px
+  
+.comments__avatar
+  &.padding-top
+    padding-top: 10px
+    
+.comments__list
+  margin-bottom: -15px
+  
+.comments__item-time
+  font-size: 13px
+  font-weight: 300
+  font-style: italic
+  text-align: left
+  color: $warmGrey
+  
+.comments__item-content
+  .field-note__comment
+    color: $black-three
+    font-style: normal

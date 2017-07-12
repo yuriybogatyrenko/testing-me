@@ -1,0 +1,64 @@
+.b-promocodes
+  font-family: 'open-sans', sans-serif
+  font-size: 14px
+  line-height: 1.5
+
+  + .b-promocodes
+    margin-top: 30px
+
+  .b-promocodes__title
+    font-family: inherit
+    font-size: 14px
+    font-weight: 600
+    line-height: 1.5
+    text-align: left
+    color: #262626
+    margin-bottom: 24px
+
+  .b-promocodes__box
+    color: #262626
+    border-bottom: 1px solid #e3e3e6
+    box-sizing: border-box
+    padding-bottom: 18px
+
+    + .b-promocodes__box
+      margin-top: 15px
+
+    &.b-promocodes__box--muted
+      color: #999999
+
+    &.box
+      display: flex
+      justify-content: space-between
+      align-items: flex-start
+
+      .box__item
+        color: inherit
+
+        &:first-child
+          flex-grow: 1
+
+        &:last-child
+          flex-shrink: 0
+          flex-basis: 100px
+
+      .box__title
+        font-family: inherit
+        font-size: inherit
+        line-height: inherit
+        text-align: left
+        color: inherit
+
+      .box__text
+        font-family: 'open-sans', sans-serif
+        font-size: 13px
+        line-height: 1.23
+        color: #999999
+        margin-top: 5px
+
+      .box__code
+        font-family: inherit
+        font-size: inherit
+        line-height: inherit
+        text-align: right
+        color: inherit

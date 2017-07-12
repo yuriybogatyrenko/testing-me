@@ -1,0 +1,155 @@
+@import "../mixins/mixins"
+@import "../vars"
+
+.user-cart
+  border-radius: 5px
+  background-color: #ffffff
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.15)
+  +transition()
+  overflow: hidden
+  flex-grow: 1
+
+  &.user-cart--unstyled
+    box-shadow: 0
+
+  &:hover
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.15), 0 0 3px 1px #ff636d
+
+    .user-cart__cover
+      background: rgba(#000, 0.1)
+      &.cover
+        .cover__item
+          +transform(translateX(0))
+          opacity: 1
+          visibility: visible
+
+  &.item-in-top
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.15), 0 0 5px 2px #ff636d
+
+  .icon-profile-in-top
+    position: absolute
+    top: 20px
+    left: 0
+    z-index: 11
+
+.user-cart__thumbnail
+  position: relative
+  font-size: 0
+  line-height: 0
+  overflow: hidden
+
+.user-cart__src
+  width: 100%
+  height: 100%
+  object-fit: cover
+  object-position: center center
+  border-radius: 5px 5px 0 0
+
+
+.user-cart__cover
+  +transition()
+  position: absolute
+  height: 100%
+  display: flex
+  width: 100%
+  align-items: center
+  justify-content: center
+  z-index: 10
+  left: 0
+  top: 0
+
+  &.cover
+    .cover__item
+      +transition()
+      opacity: 0
+      visibility: hidden
+
+      &:first-child
+        +transform(translateX(-30px))
+
+      &:last-child
+        +transform(translateX(30px))
+
+      &:before
+        display: block
+        content: ''
+        position: absolute
+        top: 10%
+        left: 10%
+        width: 80%
+        height: 80%
+        //margin-left: -1px
+        //margin-top: -1px
+        box-shadow: 0 0 10px 5px rgba(#000, 0.8)
+        z-index: 1
+        +transition()
+        border-radius: 100%
+        opacity: 0
+
+      &:hover
+        &:before
+          opacity: 1
+
+      [class*='icon']
+        position: relative
+        z-index: 2
+
+.user-cart__photos-count
+  position: absolute
+  bottom: 15px
+  left: 15px
+  padding: 3px 5px
+  border-radius: 3px
+  background: rgba($black-two, 0.6)
+  display: flex
+  align-items: center
+  color: #fff
+  font-size: 14px
+  line-height: normal
+  z-index: 11
+
+  &.photo-checked
+    background: #ff616b
+
+.user-cart__information
+  padding: 15px
+
+.user-cart__name
+  font-weight: 600
+  color: $black-two
+
+.user-cart__geo
+  color: #b3b3b3
+//font-weight: 300
+
+.user-cart__status
+  font-size: 13px
+  display: flex
+  align-items: center
+
+  &.online
+    color: #6dc100
+
+  &.offline
+    color: #999999
+
+.grid-catalog__item
+  &[data-gridtype="list-type"]
+    flex-basis: 50%
+
+    .user-cart
+      padding: 0
+      display: flex
+      flex-direction: row
+
+    .user-cart__thumbnail
+      flex-basis: 200px
+      flex-shrink: 0
+
+    .user-cart__message
+      display: block
+
+.user-cart__message
+  padding-top: 20px
+  color: #5e5d91
+  font-style: italic

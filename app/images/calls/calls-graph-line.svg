@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1013" height="82" viewBox="0 0 1013 82">
+    <defs>
+        <linearGradient id="a" x1="99.402%" x2="0%" y1="55.709%" y2="31.099%">
+            <stop offset="0%" stop-color="#82F1DF" stop-opacity="0"/>
+            <stop offset="16.39%" stop-color="#53E3C3"/>
+            <stop offset="17.192%" stop-color="#F46DD8"/>
+            <stop offset="18.096%" stop-color="#68E9D0"/>
+            <stop offset="41.362%" stop-color="#F88BE4"/>
+            <stop offset="49.145%" stop-color="#40D1A6"/>
+            <stop offset="61.725%" stop-color="#47DCAF"/>
+            <stop offset="71.513%" stop-color="#549AE5"/>
+            <stop offset="84.395%" stop-color="#7ABDF1"/>
+            <stop offset="87.881%" stop-color="#7ABDF1" stop-opacity="0"/>
+            <stop offset="100%" stop-color="#7ABDF1" stop-opacity="0"/>
+        </linearGradient>
+    </defs>
+    <path fill="none" fill-rule="evenodd" stroke="url(#a)" stroke-width="2" d="M0 89.823S99.685 2.89 178.312 41.178C295 98 320.637 102.109 446 34c125.363-68.11 220.809 5.255 249 7.178 29.321 2 164.37 59.447 261.675 0 97.305-59.448 179.744-8.892 201.817 10.283" transform="translate(-139 -4)"/>
+</svg>

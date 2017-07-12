@@ -1,0 +1,467 @@
+@import 'mixins/mixins'
+@import 'mixins/retina_sprites'
+
+.icon-social
+  @each $soc in fb, tw, vk, gplus, insta, youtube
+    &-#{$soc}
+      +sprite(icon-social-#{$soc})
+
+.icon-mail-small
+  +sprite(icon-mail-small)
+
+.icon-faq-detector
+  width: 18px
+  height: 18px
+  border-radius: 100%
+  position: absolute
+  left: 16px
+  top: 16px
+  background: #bd0fe1
+
+  &:before, &:after
+    position: absolute
+    display: block
+    content: ''
+    top: 50%
+    left: 50%
+    height: 2px
+    width: 50%
+    background: #fff
+    +transition()
+    +transform(translate3d(-50%, -50%, 0))
+
+  &:after
+    width: 2px
+    height: 50%
+
+.icon-main-na-app-apple
+  +sprite(icon-main-na-app-apple)
+
+.icon-main-na-app-google
+  +sprite(icon-main-na-app-google)
+
+.icon-main-na__video-play
+  background: #bd0fe1
+  border-radius: 100%
+  position: relative
+  width: 64px
+  height: 64px
+  display: block
+
+  &:after
+    display: block
+    content: ''
+    position: absolute
+    top: 50%
+    border: 10px solid transparent
+    border-left: 12px solid #fff
+    left: 50%
+    transform: translate(-50%, -50%)
+    margin-left: 8px
+
+.icon-faq-cog
+  +sprite(icon-faq-cog)
+
+.icon-top-female
+  +sprite(icon-top-female)
+
+.icon-footer-app-apple
+  +sprite(icon-footer-apple)
+
+.icon-footer-app-google
+  +sprite(icon-footer-googleplay)
+
+.icon-app-apple
+  +sprite(icon-header-apple)
+
+.icon-app-google
+  +sprite(icon-header-googleplay)
+
+.icon-app-apple-white
+  +sprite(icon-header-apple-white)
+
+.icon-app-google-white
+  +sprite(icon-header-googleplay-white)
+
+.icon-confidentiality
+  +sprite(icon-confidentiality)
+
+.icon-profile-activated
+  +sprite(icon-profile-activated)
+
+.icon-profile-blocked
+  +sprite(icon-profile-blocked)
+
+.icon-header-wallet
+  +sprite(icon-header-wallet)
+
+.icon-profile-invisible
+  +sprite(icon-profile-invisible)
+
+.icon-header-cog
+  +sprite(icon-header-cog)
+
+.icon-catalog-grid
+  +sprite(icon-catalog-grid)
+
+.icon-catalog-grid-active
+  +sprite(icon-catalog-grid-active)
+
+.icon-catalog-listing
+  +sprite(icon-catalog-listing)
+
+.icon-catalog-listing-active
+  +sprite(icon-catalog-listing-active)
+
+.icon-catalog-chat
+  +sprite(icon-catalog-chat)
+
+.icon-catalog-phone
+  +sprite(icon-catalog-phone)
+
+.icon-catalog-photo
+  +sprite(icon-catalog-photo)
+
+.icon-catalog-favorite
+  +sprite(icon-catalog-favorite)
+
+.icon-catalog-phone20
+  +sprite(icon-catalog-phone20)
+
+.icon-catalog-chat20
+  +sprite(icon-catalog-chat20)
+
+.icon-catalog-chat48
+  +sprite(icon-catalog-chat48)
+
+.icon-catalog-phone48
+  +sprite(icon-catalog-phone48)
+
+.icon-catalog-favorite48
+  +sprite(icon-catalog-favorite48)
+
+.icon-navigator
+  +sprite(icon-navigator)
+
+.icon-profile-in-top
+  +sprite(icon-profile-in-top)
+
+.icon-catalog-photo-checked
+  +sprite(icon-catalog-photo-checked)
+
+.icon-online-status
+  width: 10px
+  height: 10px
+  display: inline-block
+  vertical-align: middle
+  border-radius: 100%
+  background: #999999
+  font-size: 0
+  line-height: 0
+  &.online
+    background: #6ec100
+
+  &.offline
+    background: #999999
+
+.icon-search
+  +sprite(icon-search)
+
+.icon-full-search
+  background-image: linear-gradient(to top, #a149a9, #c732d4)
+  box-shadow: 0 1px 3px 0 rgba(165, 85, 172, 0.6), inset 0 0 1px 0 rgba(0, 0, 0, 0.07)
+  border-radius: 100%
+  width: 18px
+  height: 18px
+  position: relative
+
+  &:before, &:after
+    display: block
+    content: ''
+    position: absolute
+    top: 50%
+    left: 50%
+    height: 2px
+    width: 50%
+    +transform(translate3d(-50%, -50%, 0))
+    +transition()
+    background: #fff
+    opacity: 0.8
+
+  &:after
+    opacity: 0
+    height: 50%
+    width: 2px
+
+  &-plus
+    &:after
+      opacity: 1
+
+.icon-call-top-phone
+  +sprite(icon-call-top-phone)
+
+.icon-message-about
+  +sprite(icon-message-about)
+
+.icon-chat-about
+  +sprite(icon-chat-about)
+
+.icon-phone-about
+  +sprite(icon-phone-about)
+
+.icon-app-about
+  +sprite(icon-app-about)
+
+.icon-invisible-about
+  +sprite(icon-invisible-about)
+
+.icon-call-wifi
+  +sprite(icon-call-wifi)
+
+.icon-call-phone
+  +sprite(icon-call-phone)
+
+.icon-call-connect
+  +sprite(icon-call-connect)
+
+.icon-call-phone-ring
+  +sprite(icon-call-phone-ring)
+
+.icon-select-purple-triangle
+  +sprite(icon-select-purple-triangle)
+
+.icon-profile-comments
+  +sprite(icon-profile-comments)
+
+.icon-profile-views
+  +sprite(icon-profile-views)
+
+.icon-profile-search
+  +sprite(icon-profile-search)
+
+.icon-profile-crown
+  +sprite(icon-profile-crown)
+
+.icon-camera
+  +sprite(icon-camera)
+
+.icon-camera20
+  +sprite(icon-camera20)
+
+.icon-pencil
+  +sprite(icon-pencil)
+
+.icon-invisible-hat
+  +sprite(icon-invisible-hat)
+
+.icon-camera-purple
+  +sprite(icon-camera-purple)
+
+.icon-catalog-photo-checked-red
+  +sprite(icon-catalog-photo-checked-red)
+
+.icon-chat-direct
+  +sprite(icon-chat-direct)
+
+.icon-big-present
+  +sprite(icon-big-present)
+
+.icon-purple-heart
+  +sprite(icon-purple-heart)
+
+.icon-purple-cross
+  +sprite(icon-purple-cross)
+
+.icon-chat-mobile
+  +sprite(icon-chat-mobile)
+
+.icon-navigation-sidebar
+  +sprite(icon-navigation-sidebar)
+
+.icon-eye
+  +sprite(icon-eye)
+
+.icon-message-large
+  +sprite(icon-message-large)
+
+.icon-time-large
+  +sprite(icon-time-large)
+
+.icon-tag
+  +sprite(icon-tag)
+
+.icon-rocket
+  +sprite(icon-rocket)
+
+.icon-rocket28
+  +sprite(icon-rocket28)
+
+.icon-photo-approve
+  +sprite(icon-photo-approve)
+
+.icon-incognito
+  +sprite(icon-incognito)
+
+.icon-incognito28
+  +sprite(icon-incognito28)
+
+.icon-cursor28
+  +sprite(icon-cursor28)
+
+.icon-lips
+  +sprite(icon-lips)
+
+.icon-purchase-contact
+  +sprite(icon-purchase-contact)
+
+.icon-gallery
+  +sprite(icon-gallery)
+
+.icon-package-box
+  +sprite(icon-package-box)
+
+.icon-purchase-phone
+  +sprite(icon-purchase-phone)
+
+.icon-bounces
+  +sprite(icon-bounces)
+
+.icon-check-success
+  +sprite(icon-check-success)
+
+.icon-sandtime
+  +sprite(icon-sandtime)
+
+.icon-circle-remove
+  +sprite(icon-circle-remove)
+
+.icon-question-square
+  +sprite(icon-question-square)
+
+@each $mm in mail-online, metro, tatler, wmj
+  .icon-mm-#{$mm}
+    +sprite(icon-mm-#{$mm})
+
+@each $grey in info, app-store, google-play
+  .icon-grey-#{$grey}
+    +sprite(icon-grey-#{$grey})
+
+@each $premium in filter, change, percent, drink, headphone
+  .icon-premium-#{$premium}
+    +sprite(icon-premium-#{$premium})
+
+@each $operator in MTC, beeline, megafon, tele2
+  .icon-operator-#{$operator}
+    +sprite(icon-operator-#{$operator})
+
+@each $payment in visa, sms, other, yandex, qiwi, webmoney, alfaclick, bitcoin, psb
+  .icon-payment-#{$payment}
+    +sprite(icon-payment-#{$payment})
+
+@each $chat in cog, cog-active,  close, call, messages, messages-active, lips, lips-active, phone, phone-active, check, check-active, bell, bell-active, star, star-active, hand, hand-active, folder, folder-active, search, send, smile, smile-active, photo, gift, gift-active, call-green, message
+  .icon-chat-#{$chat}
+    +sprite(icon-chat-#{$chat})
+
+.icon-message-light
+  +sprite(icon-message-light)
+
+.icon-present
+  +sprite(icon-present)
+
+.icon-present-36
+  +sprite(icon-present-36)
+
+.icon-check-golden
+  +sprite(icon-check-golden)
+
+.icon-masks
+  +sprite(icon-masks)
+
+.icon-camera-blue
+  +sprite(icon-camera-blue)
+
+.icon-edit-circle
+  +sprite(icon-edit-circle)
+
+.icon-remove-circle
+  +sprite(icon-remove-circle)
+
+.icon-question-mark
+  +sprite(icon-question-mark)
+
+.icon-plus
+  position: relative
+  width: 12px
+  height: 12px
+  display: inline-block
+
+  &::before,
+  &::after
+    background-color: #808080
+    content: ''
+    display: block
+
+  &.icon-plus--purple-dark
+    &::after,
+    &::before
+      background-color: #443a91
+
+  &::before
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    left: 0
+    width: 100%
+    height: 2px
+
+  &::after
+    position: absolute
+    top: 0
+    left: 50%
+    transform: translateX(-50%)
+    width: 2px
+    height: 100%
+
+.icon-remove
+  position: relative
+  width: 12px
+  height: 12px
+  display: inline-block
+
+  &::before,
+  &::after
+    position: absolute
+    top: 0
+    background-color: #808080
+    content: ''
+    display: block
+    width: 2px
+    height: 100%
+
+  &.icon-remove--larger
+    width: 14px
+    height: 14px
+
+    &::before
+      left: 6px
+    &::after
+      right: 6px
+    
+  &.icon-remove--light
+    &::after,
+    &::before
+      background-color: #fff
+
+  &.icon-remove--purple-dark
+    &::after,
+    &::before
+      background-color: #443a91
+
+  &::before
+    left: 5px
+    transform: rotate(45deg)
+
+  &::after
+    right: 5px
+    transform: rotate(-45deg)
+    

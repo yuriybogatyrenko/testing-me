@@ -1,0 +1,51 @@
+@import "../vars"
+@import "../mixins/mixins"
+
+.catalog
+  padding-bottom: 30px
+  position: relative
+  z-index: 1
+
+.catalog__header
+  display: flex
+  justify-content: space-between
+  align-items: center
+  margin-bottom: 20px
+
+.catalog__header-filter
+  display: flex
+  align-items: center
+  border-radius: 3px
+  overflow: hidden
+  border: 1px solid #bd0fe1
+
+.catalog__header-filter-link
+  background: #fff
+  color: #bd0fe1
+  padding: 0 15px
+  line-height: 30px
+  +transition()
+  &:not(:last-child)
+    border-right: 1px solid #bd0fe1
+  &.active, &:hover
+    background: #bd0fe1
+    color: #fff
+    box-shadow: inset 0 0 1px 0 rgba(0, 0, 0, 0.07)
+
+.catalog__header-type
+  font-size: 0
+  line-height: 0
+
+.catalog__header-type-link
+  cursor: pointer
+  &.active
+    > *
+      display: none
+
+    > [class*="-active"]
+      display: block
+
+// grid catalog
+
+.catalog__wrapper
+  margin-bottom: 30px
