@@ -50,7 +50,7 @@ var TESTING = function () {
                     if (Object.keys($errors).length === 0) {
                         var xhr = new XMLHttpRequest();
 
-                        xhr.open('POST', 'http://q.gamm.biz/testing-me/backend.php');
+                        xhr.open('POST', './backend.php');
                         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
                         xhr.onload = function () {
                             if (xhr.status === 200) {
@@ -61,7 +61,7 @@ var TESTING = function () {
                         };
                         xhr.send(encodeURI('name=' + $values.name + '&secondname=' + $values.secondname + '&lastname=' + $values.lastname + '&age=' + $values.age));
 
-                        // $.post('http://q.gamm.biz/testing-me/backend.php', $values, function (response) {
+                        // $.post('./backend.php', $values, function (response) {
                         //     _self.parseUser();
                         // });
                     } else {
@@ -84,7 +84,7 @@ var TESTING = function () {
             key: 'parseUser',
             value: function parseUser() {
                 var xhr = new XMLHttpRequest();
-                xhr.open('GET', 'http://q.gamm.biz/testing-me/user-file.txt?' + new Date().getTime(), true);
+                xhr.open('GET', './user-file.txt?' + new Date().getTime(), true);
                 xhr.setRequestHeader("Cache-Control", "no-cache");
                 xhr.setRequestHeader("Pragma", "no-cache");
                 xhr.setRequestHeader("If-Modified-Since", "Sat, 1 Jan 2000 00:00:00 GMT");
@@ -121,7 +121,7 @@ var TESTING = function () {
                 function balance() {
                     clearTimeout($timeout);
                     var xhr = new XMLHttpRequest();
-                    xhr.open('GET', 'http://q.gamm.biz/testing-me/backend.php?balance=true&_=' + new Date().getTime(), true);
+                    xhr.open('GET', './backend.php?balance=true&_=' + new Date().getTime(), true);
                     xhr.setRequestHeader("Cache-Control", "no-cache");
                     xhr.setRequestHeader("Pragma", "no-cache");
                     xhr.setRequestHeader("If-Modified-Since", "Sat, 1 Jan 2000 00:00:00 GMT");

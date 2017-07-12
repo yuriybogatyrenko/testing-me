@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,yBAAyB;EACvB,OAAO,EAAE,MAAM;EACf,UAAU,EAAE,cAAc;EAC1B,aAAa,EAAE,cAAc;;;AAE/B,wBAAwB;EACtB,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;EACnB,eAAe,EAAE,MAAM;EACvB,SAAS,EAAE,IAAI;EACf,aAAa,EAAE,KAAK;;;AAEtB,wBAAwB;EACtB,MAAM,EAAE,UAAU;;AAElB,kDAAyB;EACvB,MAAM,EAAE,CAAC",
-"sources": ["../../sass/components/bottom-categories.component.sass"],
-"names": [],
-"file": "bottom-categories.component.css"
-}
